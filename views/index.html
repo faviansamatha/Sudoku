@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sudoku</title>
+    <script src="js/lib.js"></script>
+    <script src="js/sudoku.js"></script>
+    <script src="https://kit.fontawesome.com/f255b1ac30.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+  </head>
+  <body>
+    <h1 id="header">Hello There</h1>
+    <button id="newGame">New Game</button>
+    <table id="sudokuBoard">
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+      <tr class="row">
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+        <td id="cell"></td>
+      </tr>
+    </table>
+    <button id="checkSolutionBtn">Check Solution</button>
+    <div>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit">Log Out</button>
+      </form>
+    </div>
+    <!-- Start Game Modal -->
+    <div id="startGameModal" class="modal">
+      <div class="modal-content" id="game-mode-modal">
+        <span class="close">&times;</span>
+        <h1 class="modal-text">New Game</h1>
+        <hr  />
+        <h3 class="modal-text">Select Mode:</h3>
+        <div class="game-mode">
+          <div class="game-mode-component">
+            <label class="game-mode-icon">
+              <input type="radio" name="game-mode" value="casual" checked />
+              <i class="fas fa-bed fa-5x"></i>
+              <div class="game-mode-text">Casual</div>
+            </label>
+          </div>
+          <div class="game-mode-component">
+            <label class="game-mode-icon">
+              <input type="radio" name="game-mode" value="time-challenge" />
+              <i class="fas fa-bolt fa-5x"></i>
+              <div class="game-mode-text">Time Challenge</div>
+            </label>
+          </div>
+        </div>
+        <br /><br />
+        <div class="modal-text" id="gameModeDescription">No Time Limit. Just a casual game of sudoku.</div>
+        <div class="button-container">
+          <button class="button" id ="difficultyButton">Select Difficulty</button>
+           <!-- <button class="button" onclick="startGame(gameMode)">Start Game</button> -->
+        
+        </div>
+      </div>
+      <div class="modal-content" id="game-difficulty-modal">
+        <span class="close">&times;</span>
+        <h1 class="modal-text">New Game</h1>
+        <hr />
+        <h3 class="modal-text">Select Difficulty:</h3>
+        <div class = "game-difficulty">
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "BABY" >
+            <i>Baby</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "EASY">
+            <i>Easy</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "MEDIUM" checked>
+            <i>Medium</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "HARD">
+            <i>Hard</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "IMPOSSIBLE">
+            <i>Impossible</i>
+          </label>
+        </div>
+        <br /><br />
+        <div class="modal-text" id="gameDifficultyDescription">Regular game of Sudoku.</div>
+        <div class="button-container">
+          <button class="button" onclick="startGame(gameMode,gameDifficulty)">Start Game</button> 
+          
+         
+        </div>
+      </div>
+    </div>
+    <!-- End of Start Game Modal -->
+    <!-- Game Difficulty Modal -->
+    <!-- <div id="startGameModal" class="modal">
+      <div class="modal-content" id="game-difficulty-modal">
+        <span class="close">&times;</span>
+        <h1 class="modal-text">New Game</h1>
+        <hr />
+        <h3 class="modal-text">Select Difficulty:</h3>
+        <div class = "game-difficulty">
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "BABY" >
+            <i>Baby</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "EASY">
+            <i>Easy</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "MEDIUM" checked>
+            <i>Medium</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "HARD">
+            <i>Hard</i>
+          </label>
+          <label class ="game-mode-difficulty">
+            <input type = "radio" name = "game-difficulty" value = "IMPOSSIBLE">
+            <i>Impossible</i>
+          </label>
+        </div>
+        <br /><br />
+        <div class="modal-text" id="gameModeDescription">No Time Limit. Just a casual game of sudoku.</div>
+        <div class="button-container">
+          <button class="button" onclick="startGame(gameMode)">Start Game</button> 
+          
+         
+        </div>
+      </div>
+    </div> -->
+    <!-- End of Game Difficulty Modal -->
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+      <div class="modal-content">
+        <h1 id="gameOverHeader"></h1>
+        <p id="gameOverMessage"></p>
+        <hr />
+        <span id="gameOverCloseBtn" class="button" style="float: right"></span>
+      </div>
+    </div>
+    <!-- End of Game Over Modal -->
+    <script src="js/gameMode.js"></script>
+    <script src="js/gameOver.js"></script>
+  </body>
+</html>

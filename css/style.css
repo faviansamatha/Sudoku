@@ -1,0 +1,159 @@
+/* This file contains the CSS for theget game */
+
+/* Basic CSS for the Page*/
+body {
+  background-color: aliceblue;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+.button-container {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.button {
+  background-color: #4a869c;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: #3f7180;
+}
+/* End Basic CSS for the Page */
+
+/* CSS for Modal */
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  visibility: hidden;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: azure;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  max-height: 100%;
+  overflow: auto;
+  border-radius: 0.5rem;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.modal-text {
+  text-align: center;
+  color: #2d545e;
+}
+
+.game-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.game-mode-icon {
+  text-align: center;
+  color: grey;
+}
+
+.game-mode-text {
+  text-align: center;
+  padding-top: 15px;
+}
+.game-mode-difficulty {
+  background-color: #4a869c;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.fas {
+  padding: 25px;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  border: solid 1px grey;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.fas:after {
+  content:'';
+  padding-top:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+[type=radio] {
+  display: none;
+}
+
+[type=radio] + i {
+  cursor: pointer;
+}
+
+[type=radio]:checked + i {
+  color: #2d545e;
+  border: solid 2px #2d545e;
+  border-radius: 50%;
+}
+
+[type=radio]:checked ~ .game-mode-text {
+  color: #2d545e;
+  font-weight: bold;
+}
+
+#gameModeDescription {
+  font-size: 0.9rem;
+}
+/* End CSS for Modal */
+
+/* CSS for the Sudoku Grid*/
+td {
+  border: 1px solid black;
+  width:50px;
+  height:50px;
+  text-align:center;
+  background-color: #fff5d7;
+  outline: none;
+}
+.row:nth-child(3n) td {
+  border-bottom: 3px solid black;
+}
+.row:nth-child(3n+1) td {
+  border-top: 3px solid black;
+}
+td:nth-child(3n) {
+  border-right: 3px solid black;
+}
+td:nth-child(3n+1) {
+  border-left: 3px solid black;
+}
+/* End CSS for the Sudoku Grid*/
