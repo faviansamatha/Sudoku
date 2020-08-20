@@ -16,7 +16,7 @@ const users = [{
 }];
 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: "SecretString",//process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }))
