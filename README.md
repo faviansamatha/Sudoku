@@ -24,3 +24,7 @@ This is a sudoku side project created by Jacky Liu and Favian (Ian) Samatha. Thi
 ![Choose Difficulty Screenshot](/img/Menu.png)
 - Gameplay
 ![Gameplay Screenshot](/img/Gameplay.png)
+
+## Authors:
+[Favian (Ian) Samatha](https://github.com/faviansamatha)
+[Jacky Liu](https://github.com/jackyliu0101)
